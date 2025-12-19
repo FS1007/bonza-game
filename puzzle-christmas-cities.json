@@ -1,0 +1,36 @@
+{
+  "title": "Christmas Time",
+  "description": "🎅 5 US Towns with Unique Christmas Themes 🎄",
+  "words": [
+    {
+      "word": "NORTHPOLE",
+      "fragments": ["NOR", "THP", "OLE"],
+      "orientation": "horizontal",
+      "fact": "North Pole, Alaska celebrates Christmas year-round with candy cane street lights, streets named Santa Claus Lane and Kris Kringle Drive, and the Santa Claus House that receives hundreds of thousands of letters to Santa each year."
+    },
+    {
+      "word": "LEAVENWORTH",
+      "fragments": ["LEA", "VEN", "WOR", "TH"],
+      "orientation": "vertical",
+      "fact": "Leavenworth, Washington transforms into a Bavarian alpine village for Christmas with over half a million lights, carolers in traditional costumes, and the famous Christmas Lighting Festival that draws visitors from around the world."
+    },
+    {
+      "word": "MCADENVILLE",
+      "fragments": ["MCA", "DEN", "VIL", "LE"],
+      "orientation": "horizontal",
+      "fact": "McAdenville, North Carolina is known as 'Christmas Town USA' since 1956, where every tree, building, and lake is decorated with red, green, and white lights, attracting over 500,000 visitors annually during the holiday season."
+    },
+    {
+      "word": "BETHLEHEM",
+      "fragments": ["BET", "HLE", "HEM"],
+      "orientation": "vertical",
+      "fact": "Bethlehem, Pennsylvania embraces its biblical name during Christmas with Christkindlmarkt (one of America's oldest Christmas markets), a massive star on South Mountain visible for miles, and receives thousands of letters requesting its special postmark."
+    },
+    {
+      "word": "NEWYORKCITY",
+      "fragments": ["NEW", "YOR", "KCI", "TY"],
+      "orientation": "horizontal",
+      "fact": "New York City's Christmas traditions include the iconic Rockefeller Center Christmas Tree and ice skating rink, spectacular window displays at department stores, the Radio City Christmas Spectacular, and thousands of festive lights throughout the city."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Technology Titans",
+  "description": "Match the companies with their founders",
+  "words": [
+    {
+      "word": "NETFLIX",
+      "fragments": ["NET", "FLIX"],
+      "fact": "Netflix was founded by Reed Hastings in 1997, initially as a DVD rental service before revolutionizing streaming entertainment."
+    },
+    {
+      "word": "SNAPCHAT",
+      "fragments": ["SNAP", "CHAT"],
+      "fact": "Snapchat was created by Evan Spiegel, Bobby Murphy, and Reggie Brown while they were students at Stanford University in 2011."
+    },
+    {
+      "word": "SHAZAM",
+      "fragments": ["SHA", "ZAM"],
+      "fact": "Shazam was co-founded by Chris Barton, Dhiraj Mukherjee, Avery Wang, and Philip Inghelbrecht in 1999, launching before smartphones even existed."
+    },
+    {
+      "word": "LINKEDIN",
+      "fragments": ["LINKED", "IN"],
+      "fact": "LinkedIn was founded by Reid Hoffman and launched in 2003, becoming the world's largest professional networking platform with over 900 million members."
+    },
+    {
+      "word": "WHATSAPP",
+      "fragments": ["WHATS", "APP"],
+      "fact": "WhatsApp was founded by Jan Koum and Brian Acton in 2009, later acquired by Facebook for $19 billion in 2014, one of the largest tech acquisitions ever."
+    }
+  ]
+}

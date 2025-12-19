@@ -1,0 +1,36 @@
+{
+  "title": "Your Puzzle Title",
+  "description": "Brief description of the theme or connection between words",
+  "words": [
+    {
+      "word": "EXAMPLEWORD",
+      "fragments": ["EXAM", "PLE", "WORD"],
+      "orientation": "horizontal",
+      "fact": "An interesting fact about this word that will be revealed when the puzzle is complete."
+    },
+    {
+      "word": "ANOTHERWORD",
+      "fragments": ["ANO", "THER", "WORD"],
+      "orientation": "vertical",
+      "fact": "Another interesting fact that teaches or entertains the player. Use 'vertical' for words that go top to bottom."
+    },
+    {
+      "word": "THIRDWORD",
+      "fragments": ["THIRD", "WORD"],
+      "orientation": "horizontal",
+      "fact": "Mix horizontal and vertical words to create a more interesting puzzle layout."
+    },
+    {
+      "word": "FOURTHWORD",
+      "fragments": ["FOUR", "TH", "WORD"],
+      "orientation": "vertical",
+      "fact": "Split words into 3-5 letter fragments for better challenge. Fragments should be 3-5 letters each."
+    },
+    {
+      "word": "FIFTHWORD",
+      "fragments": ["FIF", "TH", "WO", "RD"],
+      "orientation": "horizontal",
+      "fact": "More fragments make the puzzle more challenging. Aim for 4-6 total words per puzzle."
+    }
+  ]
+}

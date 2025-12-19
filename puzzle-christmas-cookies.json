@@ -1,0 +1,36 @@
+{
+  "title": "Christmas Time",
+  "description": "🎅 5 Tempting Christmas Cookies 🎅",
+  "words": [
+    {
+      "word": "SNICKERDOODLES",
+      "fragments": ["SNI", "CKE", "RDO", "ODL", "ES"],
+      "orientation": "horizontal",
+      "fact": "Snickerdoodles are cinnamon-sugar cookies with a crackled surface, believed to have German or Dutch origins and are a holiday favorite."
+    },
+    {
+      "word": "GINGERBREAD",
+      "fragments": ["GIN", "GER", "BRE", "AD"],
+      "orientation": "vertical",
+      "fact": "Gingerbread cookies date back to Medieval Europe and became a Christmas tradition thanks to the Brothers Grimm fairy tale Hansel and Gretel."
+    },
+    {
+      "word": "PEANUTBUTTER",
+      "fragments": ["PEA", "NUT", "BUT", "TER"],
+      "orientation": "horizontal",
+      "fact": "Peanut butter cookies with the classic fork crosshatch pattern became popular in America during the 1930s and are a Christmas cookie exchange staple."
+    },
+    {
+      "word": "CHOCOLATE",
+      "fragments": ["CHO", "COL", "ATE"],
+      "orientation": "vertical",
+      "fact": "Chocolate cookies, whether chocolate chip or double chocolate, are the most popular cookie flavor worldwide and a must-have during the holidays."
+    },
+    {
+      "word": "MOLASSES",
+      "fragments": ["MOL", "ASS", "ES"],
+      "orientation": "horizontal",
+      "fact": "Molasses cookies are soft, chewy, and spiced with ginger and cinnamon - a traditional Christmas treat that fills your home with festive aromas."
+    }
+  ]
+}
