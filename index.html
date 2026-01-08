@@ -1,60 +1,160 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-378739910"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-378739910');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonza Word Puzzle</title>
-    <link rel="stylesheet" href="style.css">
+    <title>WordUp - Daily Educational Puzzles</title>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 40px; }
+        header { text-align: center; margin-bottom: 35px; padding: 20px 20px 10px; }
+        .logo { font-size: 3.5em; margin-bottom: 8px; line-height: 1; }
+        h1 {
+            font-size: 3em; margin-bottom: 8px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; font-weight: 800; letter-spacing: -0.02em;
+        }
+        .tagline { font-size: 1.1em; color: #94a3b8; font-weight: 400; margin-bottom: 12px; }
+        .daily-badge {
+            display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            color: white; padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 0.85em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .section-title { font-size: 1.6em; margin-bottom: 25px; text-align: center; color: #f1f5f9; font-weight: 700; letter-spacing: -0.01em; }
+        .puzzles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .puzzle-card {
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%); border-radius: 20px; padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative; overflow: hidden;
+        }
+        .puzzle-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--card-gradient-start), var(--card-gradient-end));
+        }
+        .puzzle-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .puzzle-card.pm-theme { --card-gradient-start: #3b82f6; --card-gradient-end: #8b5cf6; }
+        .puzzle-card.accounting-theme { --card-gradient-start: #10b981; --card-gradient-end: #06b6d4; }
+        .category-badge {
+            display: inline-block; padding: 5px 14px; border-radius: 10px; font-size: 0.75em;
+            font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.8px;
+        }
+        .pm-badge { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+        .accounting-badge { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); }
+        .puzzle-icon { font-size: 1.8em; margin-bottom: 14px; display: block; line-height: 1; letter-spacing: 0.05em; }
+        .puzzle-title { font-size: 1.6em; font-weight: 700; margin-bottom: 12px; color: #f1f5f9; line-height: 1.25; letter-spacing: -0.01em; }
+        .puzzle-description { font-size: 1em; color: #cbd5e1; line-height: 1.5; margin-bottom: 20px; font-weight: 400; }
+        .puzzle-meta { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.85em; color: #94a3b8; font-weight: 500; }
+        .meta-icon { font-size: 1.1em; }
+        .btn {
+            width: 100%; padding: 14px 28px; border-radius: 12px; font-size: 1.05em; font-weight: 600;
+            text-decoration: none; text-align: center; transition: all 0.3s ease;
+            border: none; cursor: pointer; display: block; letter-spacing: -0.01em;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
+            color: white; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(59, 130, 246, 0.4); }
+        footer { text-align: center; padding: 30px 20px; color: #64748b; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 40px; }
+        footer p { margin: 6px 0; font-size: 0.9em; font-weight: 400; }
+        @media (max-width: 768px) {
+            .container { padding: 20px 15px 30px; }
+            header { padding: 15px 15px 5px; margin-bottom: 25px; }
+            .logo { font-size: 2.8em; }
+            h1 { font-size: 2.2em; }
+            .tagline { font-size: 1em; }
+            .section-title { font-size: 1.4em; margin-bottom: 20px; }
+            .puzzles-grid { grid-template-columns: 1fr; gap: 25px; margin-bottom: 40px; }
+            .puzzle-card { padding: 25px; }
+            .puzzle-icon { font-size: 1.6em; }
+            .puzzle-title { font-size: 1.4em; }
+            .puzzle-description { font-size: 0.95em; }
+            .btn { padding: 13px 24px; font-size: 1em; }
+        }
+        @media (max-width: 480px) {
+            .logo { font-size: 2.5em; }
+            h1 { font-size: 1.9em; }
+            .puzzle-card { padding: 22px; }
+            .puzzle-icon { font-size: 1.5em; }
+            .puzzle-title { font-size: 1.3em; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>🧩 Bonza Word Puzzle</h1>
-        <p id="puzzle-description">Loading puzzle...</p>
-    </header>
-
-    <!-- Main Game Container -->
-    <main>
-        <!-- Game Area - Where all pieces are scattered and played -->
-        <div id="game-area">
-            <!-- Pieces will be dynamically inserted here -->
-        </div>
-    </main>
-
-    <!-- Victory Modal -->
-    <div id="victory-modal" class="modal">
-        <div class="modal-content">
-            <button id="close-victory" class="close-btn" aria-label="Close">×</button>
-            <h2>🎉 Congratulations!</h2>
-            <p class="victory-message">You've completed the puzzle!</p>
-            
-            <div id="facts-container">
-                <h3>Did you know?</h3>
-                <ul id="facts-list">
-                    <!-- Facts will be populated here -->
-                </ul>
+    <div class="container">
+        <header>
+            <div class="logo">🧩</div>
+            <h1>WordUp</h1>
+            <p class="tagline">Daily Educational Puzzles - Learn Through Play</p>
+            <span class="daily-badge">🔥 New Puzzles Daily</span>
+        </header>
+        <main>
+            <h2 class="section-title">Today's Puzzles</h2>
+            <div class="puzzles-grid">
+                <div class="puzzle-card pm-theme">
+                    <span class="category-badge pm-badge">🎯 Product Management</span>
+                    <span class="puzzle-icon">📈 🔄</span>
+                    <h3 class="puzzle-title">What are the Product Lifecycle Stages?</h3>
+                    <p class="puzzle-description">
+                        Discover the journey every product takes from launch to sunset. Think market entry, rapid expansion, peak saturation, and eventual phase-out.
+                    </p>
+                    <div class="puzzle-meta">
+                        <div class="meta-item"><span class="meta-icon">🎯</span><span>4 Words</span></div>
+                        <div class="meta-item"><span class="meta-icon">📱</span><span>Vertical</span></div>
+                        <div class="meta-item"><span class="meta-icon">⏱️</span><span>6-10 min</span></div>
+                    </div>
+                    <a href="pm-product-lifecycle/" class="btn btn-primary">Play Now</a>
+                </div>
+                <div class="puzzle-card accounting-theme">
+                    <span class="category-badge accounting-badge">💰 Finance & Accounting</span>
+                    <span class="puzzle-icon">🏦 📊</span>
+                    <h3 class="puzzle-title">What are the key Asset Types?</h3>
+                    <p class="puzzle-description">
+                        Uncover how businesses classify their valuable resources. Some convert quickly to cash, others are long-term holdings, and some you can't even touch.
+                    </p>
+                    <div class="puzzle-meta">
+                        <div class="meta-item"><span class="meta-icon">🎯</span><span>4 Words</span></div>
+                        <div class="meta-item"><span class="meta-icon">📱</span><span>Vertical</span></div>
+                        <div class="meta-item"><span class="meta-icon">⏱️</span><span>5-9 min</span></div>
+                    </div>
+                    <a href="accounting-asset-types/" class="btn btn-primary">Play Now</a>
+                </div>
             </div>
-            
-            <button id="new-puzzle-btn" class="btn-primary">Play New Puzzle</button>
-        </div>
+        </main>
+        <footer>
+            <p>🧩 <strong>WordUp</strong> - Making Learning Fun Through Puzzles</p>
+            <p>New puzzles added daily • Play anywhere, anytime</p>
+        </footer>
     </div>
-
-    <!-- Instructions Panel (Toggleable) -->
-    <aside class="instructions" id="instructions-panel">
-        <button id="close-instructions" class="close-btn" aria-label="Close instructions">×</button>
-        <h3>How to Play</h3>
-        <ol>
-            <li>Drag word fragments to position them</li>
-            <li>Connect fragments to form complete words</li>
-            <li>Completed words turn green and lock</li>
-            <li>Find all word pairs to win!</li>
-        </ol>
-    </aside>
-
-    <!-- Help Button -->
-    <button id="help-btn" class="help-btn" title="How to play">?</button>
-
-    <!-- Game Script -->
-    <script src="script.js"></script>
 </body>
 </html>
